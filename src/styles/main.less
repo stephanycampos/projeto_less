@@ -1,0 +1,115 @@
+@import "variaveis.less";
+
+@breakpointMobile: ~"(max-width: 767px)";
+@breakpointTablet: ~"(min-width: 768px) and (max-width: 1023px)";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Reboto', sans-serif;
+
+}
+
+body{
+    background-color: @corDeFundo;
+    color: @corDosTextos;
+}                
+
+li { 
+    list-style: none;
+}
+
+.container{
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @media @breakpointTablet {
+        max-width: 80%;
+    }
+
+    @media @breakpointMobile {
+        max-width: 70%;
+    }
+
+}
+
+header{
+    padding-bottom: 24px;
+
+    .profile-avatar {
+        display: block;
+        margin: 0 auto 24px;
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+    }
+}
+
+
+.profile-bio{
+    text-align: center;
+
+    &-name{
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    &-subtitle{
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+
+    &-description{
+        font-size: 14px;
+        opacity: .7;
+    }
+
+}
+
+.social-links{
+    display: flex;
+    justify-content: space-between;
+    max-width: 240px;
+    width: 100%;
+    margin: 0 auto;
+    li{
+
+        img{
+            transition: all ease .3s;
+            &:hover{
+                transform: scale(1.3);
+            }
+        }
+    }
+}
+
+.projects-list{
+    margin-top: 32px;
+    
+    &-item{
+        a {
+            text-decoration: none;
+            background-color: @corDosBotoes;
+            display: block;
+            padding: 16px 20px;
+            margin-bottom: 16px;
+            text-align: center;
+            color: @corDosTextosDosBotoes;
+            font-weight: bold;
+            border-radius: 30px;
+            border: 2px solid @corDosBotoes;
+            transition: all ease .5s;
+
+            &:hover{
+                color: @corDosBotoes;
+                background-color: transparent;
+            }
+        }
+    }
+}
